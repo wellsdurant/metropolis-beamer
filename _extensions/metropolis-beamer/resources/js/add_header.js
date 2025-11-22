@@ -49,12 +49,24 @@ function header() {
       return;
     }
 
-    // Update hierarchy based on slide content
-    let h1 = currentSlide.querySelector('h1');
+    // Find the most recent h1 by scanning backward through slides
+    let currentIndex = Reveal.getIndices().h;
+    let slides = Reveal.getSlides();
+    let h1Text = '';
 
-    // Update stored hierarchy when new headers are found
-    if (h1) {
-      currentH1Section = h1.textContent;
+    for (let i = currentIndex; i >= 0; i--) {
+      let slide = slides[i];
+      if (slide) {
+        let h1 = slide.querySelector('h1');
+        if (h1) {
+          h1Text = h1.textContent;
+          break;
+        }
+      }
+    }
+
+    if (h1Text) {
+      currentH1Section = h1Text;
     }
 
     // Build breadcrumb HTML
