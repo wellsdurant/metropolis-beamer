@@ -9,7 +9,7 @@
 function header() {
 
   // Store section hierarchy
-  let currentH1 = '';
+  let presentationTitle = '';
   let currentH2Section = '';
   let currentH3Section = '';
 
@@ -31,6 +31,12 @@ function header() {
         logo_img.removeAttribute('data-src');
       };
     };
+
+    // Store presentation title from title slide
+    let title = document.querySelector('#title-slide .title, .quarto-title-block .title, h1.title');
+    if (title) {
+      presentationTitle = title.textContent;
+    }
   };
 
 
@@ -45,30 +51,23 @@ function header() {
     }
 
     // Update hierarchy based on slide content
-    let h1 = currentSlide.querySelector('h1');
     let h2 = currentSlide.querySelector('h2');
     let h3 = currentSlide.querySelector('h3');
 
     // Update stored hierarchy when new headers are found
-    if (h1) {
-      currentH1 = h1.textContent;
-      currentH2Section = '';  // Reset subsections when new h1 found
-      currentH3Section = '';
-    }
-    if (h2 && !h1) {
-      // Only update h2 section if this slide doesn't have h1
+    if (h2) {
       currentH2Section = h2.textContent;
       currentH3Section = '';  // Reset h3 when new h2 found
     }
-    if (h3 && !h1 && !h2) {
-      // Only update h3 if this slide doesn't have h1 or h2
+    if (h3 && !h2) {
+      // Only update h3 if this slide doesn't have h2
       currentH3Section = h3.textContent;
     }
 
     // Build breadcrumb HTML
     let breadcrumbHTML = '';
-    if (currentH1) {
-      breadcrumbHTML += `<div class="breadcrumb-line level-1">${currentH1}</div>`;
+    if (presentationTitle) {
+      breadcrumbHTML += `<div class="breadcrumb-line level-1">${presentationTitle}</div>`;
     }
     if (currentH2Section) {
       breadcrumbHTML += `<div class="breadcrumb-line level-2">└─${currentH2Section}</div>`;
