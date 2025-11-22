@@ -315,8 +315,19 @@ $authors-block-gap: 4em !default;
   
   .slide-menu-button i::before,
   .slide-menu-button .fas::before,
-  button.slide-menu-button i::before {
+  .slide-menu-button .fa-bars::before,
+  button.slide-menu-button i::before,
+  button.slide-menu-button .fas::before {
     color: #000 !important;
+    filter: none !important;
+  }
+  
+  // Override Quarto's FontAwesome icon rendering for menu button with black SVG
+  .reveal .slide-menu-button .fas::before,
+  .reveal .slide-menu-button .fa-bars::before {
+    color: #000 !important;
+    filter: none !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23000000' d='M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z'/%3E%3C/svg%3E") !important;
   }
 
   .reveal .controls,
