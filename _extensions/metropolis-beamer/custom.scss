@@ -311,6 +311,18 @@ $authors-block-gap: 4em !default;
     font-size: 0.5em !important;
   }
   
+  // Add underlines to links
+  .reveal a,
+  .reveal a:link,
+  .reveal a:visited {
+    text-decoration: underline !important;
+  }
+  
+  .reveal a:hover,
+  .reveal a:focus {
+    text-decoration: underline !important;
+  }
+  
   section[data-background-image] {
     color: white;
     
