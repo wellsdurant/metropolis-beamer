@@ -49,17 +49,28 @@ function header() {
     }
 
     // Find the most recent h1 by scanning backward through slides
-    let currentIndex = Reveal.getIndices().h;
     let slides = Reveal.getSlides();
     let h1Text = '';
 
-    for (let i = currentIndex; i >= 0; i--) {
-      let slide = slides[i];
-      if (slide) {
-        let h1 = slide.querySelector('h1');
-        if (h1) {
-          h1Text = h1.textContent;
-          break;
+    // Find current slide's position in slides array
+    let currentIndex = -1;
+    for (let i = 0; i < slides.length; i++) {
+      if (slides[i] === currentSlide) {
+        currentIndex = i;
+        break;
+      }
+    }
+
+    // Scan backward from current position to find most recent h1
+    if (currentIndex >= 0) {
+      for (let i = currentIndex; i >= 0; i--) {
+        let slide = slides[i];
+        if (slide) {
+          let h1 = slide.querySelector('h1');
+          if (h1) {
+            h1Text = h1.textContent;
+            break;
+          }
         }
       }
     }
