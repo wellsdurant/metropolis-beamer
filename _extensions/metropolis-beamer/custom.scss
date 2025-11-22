@@ -232,25 +232,35 @@ $authors-block-gap: 4em !default;
   
   // Reduce horizontal padding to move content more to the left
   .reveal .slides {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .reveal .slides > section,
+  .reveal .slides > section > section {
     padding: 0 20px !important;
   }
   
   div.slides section:not(.title-slide):not(#title-slide):not(.stack) {
-    padding-top: 2em;
+    padding-top: 2em !important;
     margin-top: 1.5em;
-    padding-bottom: 3em;
-    padding-left: 0;
-    margin-left: 0;
-    text-align: left;
+    padding-bottom: 3em !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
   }
 
   div.slides section.smaller:not(.title-slide):not(#title-slide):not(.stack) {
-    padding-top: 4em;
+    padding-top: 4em !important;
     margin-top: 1.5em;
-    padding-bottom: 2em;
-    padding-left: 0;
-    margin-left: 0;
-    text-align: left;
+    padding-bottom: 2em !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: left !important;
   }
 
   .header-logo img,

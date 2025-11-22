@@ -1,0 +1,28 @@
+/* Force slide content to be more to the left */
+.reveal .slides {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+.reveal .slides section:not(.title-slide):not(#title-slide) {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
+/* Ensure content inside sections is left-aligned */
+.reveal .slides section p,
+.reveal .slides section ul,
+.reveal .slides section ol,
+.reveal .slides section div {
+  margin-left: 0 !important;
+  text-align: left !important;
+}
