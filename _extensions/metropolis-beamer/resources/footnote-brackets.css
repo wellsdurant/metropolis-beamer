@@ -1,21 +1,32 @@
 /* Add square brackets around footnote citations */
 .reveal .slides section a.footnote-ref::before,
 .reveal .slides section sup a.footnote-ref::before,
-.reveal a.footnote-ref::before {
+.reveal a.footnote-ref::before,
+a.footnote-ref::before,
+sup a.footnote-ref::before {
   content: "[";
 }
 
 .reveal .slides section a.footnote-ref::after,
 .reveal .slides section sup a.footnote-ref::after,
-.reveal a.footnote-ref::after {
+.reveal a.footnote-ref::after,
+a.footnote-ref::after,
+sup a.footnote-ref::after {
   content: "]";
 }
 
 /* Also handle footnote back references */
-.reveal .slides section .footnote-back::before {
+.reveal .slides section .footnote-back::before,
+.footnote-back::before {
   content: "[";
 }
 
-.reveal .slides section .footnote-back::after {
+.reveal .slides section .footnote-back::after,
+.footnote-back::after {
   content: "]";
+}
+
+/* Additional selectors for Quarto-generated footnotes */
+.reveal .footnotes ol li::marker {
+  content: "[" counter(list-item) "] ";
 }
