@@ -298,14 +298,25 @@ $authors-block-gap: 4em !default;
 
   .slide-menu-button,
   .slide-menu-button a,
+  .slide-menu-button i,
+  .slide-menu-button .fas,
+  .slide-menu-button .fa-bars,
   .slide-menu-button svg,
   .slide-menu-button svg path,
   button.slide-menu-button,
+  button.slide-menu-button i,
+  button.slide-menu-button .fas,
   button.slide-menu-button svg,
   button.slide-menu-button svg path {
     color: #000 !important;
     fill: #000 !important;
     stroke: #000 !important;
+  }
+  
+  .slide-menu-button i::before,
+  .slide-menu-button .fas::before,
+  button.slide-menu-button i::before {
+    color: #000 !important;
   }
 
   .reveal .controls,
