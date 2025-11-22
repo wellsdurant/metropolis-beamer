@@ -79,18 +79,26 @@ function header() {
     let h2 = currentSlide.querySelector('h2');
     let h2Text = h2 ? h2.textContent : '';
 
+    let mainTitle = h2Text;
+    let showH1InBreadcrumb = true;
+
+    if (!h2Text && h1Text) {
+      mainTitle = h1Text;
+      showH1InBreadcrumb = false;
+    }
+
     // Build breadcrumb HTML
     let breadcrumbHTML = '';
     if (presentationTitle) {
       breadcrumbHTML += `<div class="breadcrumb-line level-1">${presentationTitle}</div>`;
     }
-    if (h1Text) {
+    if (h1Text && showH1InBreadcrumb) {
       breadcrumbHTML += `<div class="breadcrumb-line level-2">└─${h1Text}</div>`;
     }
 
-    // Add h2 title with larger size
-    if (h2Text) {
-      breadcrumbHTML += `<div class="h2-title-line">${h2Text}</div>`;
+    // Add main title
+    if (mainTitle) {
+      breadcrumbHTML += `<div class="h2-title-line">${mainTitle}</div>`;
     }
 
     header_title_placeholder.innerHTML = breadcrumbHTML;

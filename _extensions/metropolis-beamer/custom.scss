@@ -52,6 +52,10 @@ $authors-block-gap: 4em !default;
   h2 {
     display: none;
   }
+  
+  section:not(.title-slide):not(#title-slide) h1 {
+    display: none;
+  }
 
   h3, h4, h5, h6 {
     font-family: $presentation-h-font36;
