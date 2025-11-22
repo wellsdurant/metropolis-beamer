@@ -136,6 +136,13 @@ function header() {
     /****************************** END ***************************************/
     
     Reveal.on( 'slidechanged', event => {
+      // Use setTimeout to ensure DOM is fully updated
+      setTimeout(() => {
+        make_h2_title();
+      }, 0);
+    });
+
+    Reveal.on( 'slidetransitionend', event => {
       make_h2_title();
     });
     
