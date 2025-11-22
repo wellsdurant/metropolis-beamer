@@ -296,11 +296,14 @@ $authors-block-gap: 4em !default;
 	  color: #000;
   }
 
-  .slide-menu-button {
+  .slide-menu-button,
+  .slide-menu-button a,
+  .slide-menu-button svg {
     color: #000 !important;
+    fill: #000 !important;
   }
 
-  .slide-menu-button a {
+  .reveal .controls {
     color: #000 !important;
   }
 
