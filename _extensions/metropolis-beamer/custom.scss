@@ -14,7 +14,7 @@ $presentation-h2-font-size:	2em !default;
 $presentation-h3-font-size:	1.4em !default;
 $presentation-font-smaller:	0.7 !default;
 $presentation-line-height: 1.3 !default;
-$presentation-title-slide-text-align: left !default;
+$presentation-title-slide-text-align: center !default;
 $presentation-slide-text-align: left !default;
 $code-block-font-size: 0.60em !default;
 
@@ -162,10 +162,18 @@ $authors-block-gap: 4em !default;
     justify-content: center;
     align-items: center;
   }
+
+  // Center date on title slide
+  .date {
+    text-align: center !important;
+    display: block;
+    width: 100%;
+  }
   
-  #title-slide .subtitle, 
+  #title-slide .subtitle,
   div.reveal div.slides section.quarto-title-block .subtitle {
     margin-bottom: 1.5rem;
+    text-align: center;
   }
   
   // Title slide title background color (only for actual presentation title, not H1 level1 slides)
@@ -175,11 +183,19 @@ $authors-block-gap: 4em !default;
     color: #fff;
     padding: 10px 60px;
     width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   // Only apply dark background to the actual presentation title slide, not H1 level1 slides
   .slide-background[data-slide-id="title-slide"] {
     background-color: #19195A;
+  }
+
+  // Center align all content on title slide
+  #title-slide,
+  section.title-slide {
+    text-align: $presentation-title-slide-text-align !important;
   }
 
   // Keep H1 level1 slides with the normal body background
