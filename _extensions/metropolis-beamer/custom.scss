@@ -162,6 +162,15 @@ $authors-block-gap: 4em !default;
     margin-bottom: 1.5rem;
   }
   
+  // Title slide title background color
+  #title-slide .title,
+  .reveal .slides section.title-slide .title,
+  div.reveal div.slides section.quarto-title-block .title {
+    background-color: #19195A;
+    padding: 10px 20px;
+    width: fit-content;
+  }
+  
   .slide-background.title-slide {
     background-color: #19195A;
   }
