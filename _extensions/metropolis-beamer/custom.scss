@@ -298,13 +298,26 @@ $authors-block-gap: 4em !default;
 
   .slide-menu-button,
   .slide-menu-button a,
-  .slide-menu-button svg {
+  .slide-menu-button svg,
+  .slide-menu-button svg path,
+  button.slide-menu-button,
+  button.slide-menu-button svg,
+  button.slide-menu-button svg path {
     color: #000 !important;
     fill: #000 !important;
+    stroke: #000 !important;
   }
 
-  .reveal .controls {
+  .reveal .controls,
+  .reveal .controls button {
     color: #000 !important;
+  }
+
+  .reveal .controls .navigate-left,
+  .reveal .controls .navigate-right,
+  .reveal .controls .navigate-up,
+  .reveal .controls .navigate-down {
+    border-color: #000 !important;
   }
 
   // tables
