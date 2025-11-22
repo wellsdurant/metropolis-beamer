@@ -8,9 +8,8 @@
 
 function header() {
 
-  // Store section hierarchy
+  // Store presentation title
   let presentationTitle = '';
-  let currentH1Section = '';
 
   // add the header structure as the firstChild of div.reveal-header
   function add_header() {
@@ -65,17 +64,13 @@ function header() {
       }
     }
 
-    if (h1Text) {
-      currentH1Section = h1Text;
-    }
-
     // Build breadcrumb HTML
     let breadcrumbHTML = '';
     if (presentationTitle) {
       breadcrumbHTML += `<div class="breadcrumb-line level-1">${presentationTitle}</div>`;
     }
-    if (currentH1Section) {
-      breadcrumbHTML += `<div class="breadcrumb-line level-2">└─${currentH1Section}</div>`;
+    if (h1Text) {
+      breadcrumbHTML += `<div class="breadcrumb-line level-2">└─${h1Text}</div>`;
     }
 
     header_title_placeholder.innerHTML = breadcrumbHTML;
