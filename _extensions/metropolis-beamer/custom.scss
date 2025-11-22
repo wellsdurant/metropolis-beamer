@@ -290,6 +290,11 @@ $authors-block-gap: 4em !default;
     text-align: left !important;
   }
 
+  // Increase padding for level1 slides to account for breadcrumb header
+  div.slides section.level1 {
+    padding-top: 3.5em !important;
+  }
+
   .header-logo img,
   .header-logo svg{
     margin: 0px 0px 0px 0px;
@@ -455,6 +460,18 @@ $authors-block-gap: 4em !default;
       margin-top: 2.5em !important;
       padding-top: 0 !important;
       width: calc(100% - 60px);
+      transition: none !important;
+
+      li {
+        transition: none !important;
+      }
+    }
+  }
+
+  // Align outline slide list with H1 slide lists
+  .reveal .slides section.level2 {
+    ul {
+      margin-left: 60px !important;
     }
   }
 }

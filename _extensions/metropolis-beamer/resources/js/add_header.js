@@ -105,7 +105,7 @@ function header() {
       }
     }
 
-    // Add main title
+    // Add main title (not on H1 slides)
     if (mainTitle) {
       breadcrumbHTML += `<div class="h2-title-line">${mainTitle}</div>`;
     }
@@ -133,10 +133,21 @@ function header() {
   }
   
   
+  // Function to align H1 slides to top
+  function alignH1SlideToTop() {
+    let currentSlide = Reveal.getCurrentSlide();
+    if (currentSlide.classList.contains('level1')) {
+      currentSlide.style.top = '0';
+      currentSlide.style.transform = 'none';
+      currentSlide.style.display = 'block';
+    }
+  }
+
   if (Reveal.isReady()) {
     add_header();
-    
+
     make_h2_title();
+    alignH1SlideToTop();
     
     /*************** linkifying the header and footer logo ********************/
     const header_logo = document.querySelector('div.header-logo');
@@ -150,16 +161,18 @@ function header() {
       
     }
     /****************************** END ***************************************/
-    
+
     Reveal.on( 'slidechanged', event => {
       // Use setTimeout to ensure DOM is fully updated
       setTimeout(() => {
         make_h2_title();
+        alignH1SlideToTop();
       }, 0);
     });
 
     Reveal.on( 'slidetransitionend', event => {
       make_h2_title();
+      alignH1SlideToTop();
     });
     
   };

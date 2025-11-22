@@ -41,9 +41,11 @@ if quarto.doc.is_format('revealjs') then
 
     -- Collect all H1 headings
     local h1_titles = {}
+    local h1_positions = {}
     for i, block in ipairs(blocks) do
       if block.t == "Header" and block.level == 1 then
         table.insert(h1_titles, str(block.content))
+        table.insert(h1_positions, i)
       end
     end
 
@@ -52,16 +54,35 @@ if quarto.doc.is_format('revealjs') then
       return doc
     end
 
-    -- Create list of H1 titles
-    local list_items = {}
-    for i, title in ipairs(h1_titles) do
-      table.insert(list_items, {pandoc.Plain({pandoc.Str(title)})})
+    -- Function to create simple outline list without highlighting
+    local function create_simple_outline_list()
+      local list_items = {}
+      for i, title in ipairs(h1_titles) do
+        table.insert(list_items, {pandoc.Plain({pandoc.Str(title)})})
+      end
+      return pandoc.BulletList(list_items)
     end
 
-    -- Create the outline slide content with bullet list
+    -- Function to create outline list with current item marked
+    local function create_outline_list(current_title)
+      local list_items = {}
+      for i, title in ipairs(h1_titles) do
+        local item_content = {pandoc.Str(title)}
+        local item = {pandoc.Plain(item_content)}
+        -- Add data attribute to mark current item
+        if title == current_title then
+          table.insert(list_items, pandoc.Div(item, {["data-current"] = "true"}))
+        else
+          table.insert(list_items, pandoc.Div(item, {["data-current"] = "false"}))
+        end
+      end
+      return pandoc.BulletList(list_items)
+    end
+
+    -- Create the outline slide content with simple list (no graying)
     local outline_content = {
       pandoc.Header(2, {pandoc.Str("Outline")}),
-      pandoc.BulletList(list_items)
+      create_simple_outline_list()
     }
 
     -- Find the position after title slide to insert outline
@@ -82,6 +103,20 @@ if quarto.doc.is_format('revealjs') then
     -- Insert outline slides at the position
     for i = #outline_content, 1, -1 do
       table.insert(blocks, insert_pos, outline_content[i])
+    end
+
+    -- Replace each H1 slide with outline-style slide (H2 "Outline" + contextual list)
+    local offset = #outline_content  -- Account for inserted outline slide
+    for idx, pos in ipairs(h1_positions) do
+      local adjusted_pos = pos + offset + (idx - 1) -- Account for previously inserted lists
+      local current_title = h1_titles[idx]
+
+      -- Replace H1 with H2 "Outline"
+      blocks[adjusted_pos] = pandoc.Header(2, {pandoc.Str("Outline")})
+
+      -- Insert contextual outline list after the H2
+      local outline_list = create_outline_list(current_title)
+      table.insert(blocks, adjusted_pos + 1, outline_list)
     end
 
     return pandoc.Pandoc(blocks, meta)
