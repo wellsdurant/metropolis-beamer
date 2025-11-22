@@ -320,6 +320,14 @@ $authors-block-gap: 4em !default;
     border-color: #000 !important;
   }
 
+  // Override Reveal.js CSS variables for controls
+  :root {
+    --r-link-color: #126DDA;
+    --r-link-color-dark: darken(#126DDA, 15%);
+    --r-link-color-hover: lighten(#126DDA, 20%);
+    --r-controls-color: #000;
+  }
+
   // tables
   .slides table {
     
