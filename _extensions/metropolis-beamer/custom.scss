@@ -295,7 +295,15 @@ $authors-block-gap: 4em !default;
 	  background-color: transparent;
 	  color: #000;
   }
-  
+
+  .slide-menu-button {
+    color: #000 !important;
+  }
+
+  .slide-menu-button a {
+    color: #000 !important;
+  }
+
   // tables
   .slides table {
     
