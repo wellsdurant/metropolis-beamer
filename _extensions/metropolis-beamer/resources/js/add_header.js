@@ -94,7 +94,15 @@ function header() {
     
     const slides = Reveal.getSlides();
     slides.forEach(slide => {
+      const h1Element = slide.querySelector('h1');
       const h2Element = slide.querySelector('h2');
+
+      if (h1Element) {
+        const h1Text = h1Element.textContent;
+        slide.setAttribute('data-h1-text', h1Text);
+      } else {
+        slide.setAttribute('data-h1-text', '');
+      }
 
       if (h2Element) {
         const h2Text = h2Element.textContent;
