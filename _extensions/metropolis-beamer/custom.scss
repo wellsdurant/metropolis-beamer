@@ -18,7 +18,7 @@ $presentation-title-slide-text-align: left !default;
 $presentation-slide-text-align: left !default;
 $code-block-font-size: 0.60em !default;
 
-$primary-color: #4169E1 !default;
+$primary-color: rgb(38, 38, 134) !default;
 $secondary-color: #EB811B !default;
 $body-fg-color: #33474b !default;
 $alert-color: #9c162a !default;
@@ -197,7 +197,7 @@ $authors-block-gap: 4em !default;
 
     .level-2 {
       font-size: 0.85rem;
-      background-color: #1e2847;
+      background-color: rgb(25, 25, 90);
       padding: 4px 60px;
       width: 100vw;
       margin-left: -60px;
