@@ -314,12 +314,18 @@ $authors-block-gap: 4em !default;
   // Add underlines to links
   .reveal a,
   .reveal a:link,
-  .reveal a:visited {
+  .reveal a:visited,
+  .reveal .slides section a,
+  .reveal .slides section p a,
+  .reveal .slides section li a,
+  .reveal .slides section div a {
     text-decoration: underline !important;
   }
   
   .reveal a:hover,
-  .reveal a:focus {
+  .reveal a:focus,
+  .reveal .slides section a:hover,
+  .reveal .slides section a:focus {
     text-decoration: underline !important;
   }
   

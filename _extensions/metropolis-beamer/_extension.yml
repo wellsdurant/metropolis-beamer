@@ -10,6 +10,7 @@ contributes:
       css: 
         - resources/fix-menu-icon.css
         - resources/slide-padding.css
+        - resources/link-underline.css
       slide-number: c/t
       filters:
         - metropolis-header.lua
