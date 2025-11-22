@@ -145,6 +145,8 @@ $authors-block-gap: 4em !default;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
     border-top: none;
+    display: flex;
+    justify-content: center;
 
     .quarto-title-author {
       padding-left: 0em !important;
@@ -152,12 +154,12 @@ $authors-block-gap: 4em !default;
       width: fit-content;
     }
   }
-  
+
   .author,
   .quarto-title-author-name {
     color: $body-color;
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
   }
   
