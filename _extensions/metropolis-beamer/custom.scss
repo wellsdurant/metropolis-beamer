@@ -265,9 +265,12 @@ $authors-block-gap: 4em !default;
     overflow-y: auto;
   }
   
-  .footer,
-  .slide-number {
+  .footer {
     color: #604c38;
+  }
+
+  .slide-number {
+    color: #000;
   }
   
   .slide aside {
