@@ -1,0 +1,32 @@
+/* Force menu icon to black color */
+.slide-menu-button,
+.slide-menu-button *,
+.slide-menu-button a,
+.slide-menu-button a *,
+.slide-menu-button i,
+.slide-menu-button .fas,
+.slide-menu-button .fa-bars,
+.reveal .slide-menu-button,
+.reveal .slide-menu-button *,
+.reveal .slide-menu-button a,
+.reveal .slide-menu-button a *,
+.reveal .slide-menu-button i,
+.reveal .slide-menu-button .fas,
+.reveal .slide-menu-button .fa-bars {
+  color: #000 !important;
+  fill: #000 !important;
+}
+
+.slide-menu-button i::before,
+.slide-menu-button .fas::before,
+.slide-menu-button .fa-bars::before,
+.reveal .slide-menu-button i::before,
+.reveal .slide-menu-button .fas::before,
+.reveal .slide-menu-button .fa-bars::before,
+.reveal .slide-menu-button a i::before,
+.reveal .slide-menu-button a .fas::before,
+.reveal .slide-menu-button a .fa-bars::before {
+  color: #000 !important;
+  filter: brightness(0) saturate(0) !important;
+  background-color: transparent !important;
+}

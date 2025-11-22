@@ -7,6 +7,7 @@ contributes:
     revealjs:
       date-format: long
       theme: [simple, custom.scss]
+      css: resources/fix-menu-icon.css
       slide-number: c/t
       filters:
         - metropolis-header.lua
