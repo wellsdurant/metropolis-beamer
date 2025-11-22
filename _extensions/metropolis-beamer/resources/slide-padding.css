@@ -6,13 +6,13 @@
 
 .reveal .slides > section,
 .reveal .slides > section > section {
-  padding-left: 10px !important;
+  padding-left: 1px !important;
   padding-right: 40px !important;
   margin-left: 0 !important;
 }
 
 .reveal .slides section:not(.title-slide):not(#title-slide) {
-  padding-left: 10px !important;
+  padding-left: 1px !important;
   padding-right: 40px !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
