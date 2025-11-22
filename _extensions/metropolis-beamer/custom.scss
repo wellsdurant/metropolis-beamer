@@ -170,6 +170,7 @@ $authors-block-gap: 4em !default;
   #title-slide .title,
   .reveal .slides section.title-slide .title,
   div.reveal div.slides section.quarto-title-block .title {
+    background-color: rgb(38, 38, 134);
     color: #fff;
     padding: 10px 60px;
     width: fit-content;
@@ -202,7 +203,7 @@ $authors-block-gap: 4em !default;
 
     .level-1 {
       font-weight: 400;
-      background-color: #000;
+      background-color: #19195A;
       padding: 4px 60px;
       width: 100vw;
       margin-left: -60px;
