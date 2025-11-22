@@ -10,8 +10,7 @@ function header() {
 
   // Store section hierarchy
   let presentationTitle = '';
-  let currentH2Section = '';
-  let currentH3Section = '';
+  let currentH1Section = '';
 
   // add the header structure as the firstChild of div.reveal-header
   function add_header() {
@@ -51,17 +50,11 @@ function header() {
     }
 
     // Update hierarchy based on slide content
-    let h2 = currentSlide.querySelector('h2');
-    let h3 = currentSlide.querySelector('h3');
+    let h1 = currentSlide.querySelector('h1');
 
     // Update stored hierarchy when new headers are found
-    if (h2) {
-      currentH2Section = h2.textContent;
-      currentH3Section = '';  // Reset h3 when new h2 found
-    }
-    if (h3 && !h2) {
-      // Only update h3 if this slide doesn't have h2
-      currentH3Section = h3.textContent;
+    if (h1) {
+      currentH1Section = h1.textContent;
     }
 
     // Build breadcrumb HTML
@@ -69,11 +62,8 @@ function header() {
     if (presentationTitle) {
       breadcrumbHTML += `<div class="breadcrumb-line level-1">${presentationTitle}</div>`;
     }
-    if (currentH2Section) {
-      breadcrumbHTML += `<div class="breadcrumb-line level-2">└─${currentH2Section}</div>`;
-    }
-    if (currentH3Section) {
-      breadcrumbHTML += `<div class="breadcrumb-line level-3">  └─${currentH3Section}</div>`;
+    if (currentH1Section) {
+      breadcrumbHTML += `<div class="breadcrumb-line level-2">└─${currentH1Section}</div>`;
     }
 
     header_title_placeholder.innerHTML = breadcrumbHTML;
