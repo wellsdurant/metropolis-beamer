@@ -83,8 +83,8 @@ function header() {
     let showH1InBreadcrumb = true;
 
     if (!h2Text && h1Text) {
-      mainTitle = h1Text;
-      showH1InBreadcrumb = false;
+      mainTitle = '';  // Don't show large title on H1-only slides
+      showH1InBreadcrumb = true;  // Show H1 in breadcrumb bar
     }
 
     // Build breadcrumb HTML
