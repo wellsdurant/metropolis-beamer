@@ -220,6 +220,13 @@ $authors-block-gap: 4em !default;
       padding: 4px 60px;
       width: 100vw;
       margin-left: -60px;
+      min-height: 1.2em; // Ensure consistent height even when empty
+
+      // Add invisible content when empty to maintain height
+      &:empty::before {
+        content: "\00a0"; // Non-breaking space
+        visibility: hidden;
+      }
     }
 
     .h2-title-line {
