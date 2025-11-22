@@ -361,12 +361,17 @@ $authors-block-gap: 4em !default;
   .reveal .slides section div a {
     text-decoration: underline !important;
   }
-  
+
   .reveal a:hover,
   .reveal a:focus,
   .reveal .slides section a:hover,
   .reveal .slides section a:focus {
     text-decoration: underline !important;
+  }
+
+  // Remove underline from slide numbers
+  .slide-number a {
+    text-decoration: none !important;
   }
   
   section[data-background-image] {
