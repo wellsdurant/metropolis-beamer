@@ -111,8 +111,10 @@ if quarto.doc.is_format('revealjs') then
       local adjusted_pos = pos + offset + (idx - 1) -- Account for previously inserted lists
       local current_title = h1_titles[idx]
 
-      -- Replace H1 with H2 "Outline"
-      blocks[adjusted_pos] = pandoc.Header(2, {pandoc.Str("Outline")})
+      -- Replace H1 with H2 "Outline" and add data attribute with original section name
+      local h2_outline = pandoc.Header(2, {pandoc.Str("Outline")})
+      h2_outline.attributes["data-section-name"] = current_title
+      blocks[adjusted_pos] = h2_outline
 
       -- Insert contextual outline list after the H2
       local outline_list = create_outline_list(current_title)

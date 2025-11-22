@@ -62,14 +62,20 @@ function header() {
       }
     }
 
-    // Scan backward from current position to find most recent h1
+    // Scan backward from current position to find most recent h1 or section name
     if (currentIndex >= 0) {
       for (let i = currentIndex; i >= 0; i--) {
         let slide = slides[i];
         if (slide) {
+          // Check for H1 first
           let h1 = slide.querySelector('h1');
           if (h1) {
             h1Text = h1.textContent;
+            break;
+          }
+          // Check for section with data-section-name attribute (replaced H1 slides)
+          if (slide.hasAttribute('data-section-name')) {
+            h1Text = slide.getAttribute('data-section-name');
             break;
           }
         }
