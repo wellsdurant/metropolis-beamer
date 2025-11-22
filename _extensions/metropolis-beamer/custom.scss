@@ -368,11 +368,6 @@ $authors-block-gap: 4em !default;
   .reveal .slides section a:focus {
     text-decoration: underline !important;
   }
-
-  // Remove underline from slide numbers
-  .slide-number a {
-    text-decoration: none !important;
-  }
   
   section[data-background-image] {
     color: white;

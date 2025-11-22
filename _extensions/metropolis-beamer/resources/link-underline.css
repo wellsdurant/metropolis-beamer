@@ -21,3 +21,9 @@
 .reveal .slides section a:focus {
   text-decoration: underline !important;
 }
+
+/* Remove underline from slide numbers */
+.reveal .slide-number,
+.reveal .slide-number a {
+  text-decoration: none !important;
+}
