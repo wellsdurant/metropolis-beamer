@@ -52,6 +52,7 @@ format: metropolis-beamer-revealjs
 |--------------------|-------------------------------------------------------------------------------|
 | `header-logo`      | A path for logo image which will appear on the top-left corner of each slide. |
 | `header-logo-link` | A web link to linkify the `header-logo`.                                      |
+| `outline`          | Generate an outline slide after the title slide listing all H1 sections (default: `true`). Set to `false` to disable. |
 
 
 ## Customization

@@ -83,6 +83,9 @@ function header() {
     let mainTitle = h2Text;
     let showH1InBreadcrumb = true;
 
+    // Check if this is the outline slide
+    let isOutlineSlide = h2Text === 'Outline';
+
     if (!h2Text && h1Text) {
       mainTitle = h1Text;  // Show H1 as large title on H1-only slides
       showH1InBreadcrumb = true;  // Also show H1 in breadcrumb bar
@@ -93,8 +96,13 @@ function header() {
     if (presentationTitle) {
       breadcrumbHTML += `<div class="breadcrumb-line level-1">${presentationTitle}</div>`;
     }
+    // Show level-2 breadcrumb, but empty on outline slide
     if (h1Text && showH1InBreadcrumb) {
-      breadcrumbHTML += `<div class="breadcrumb-line level-2">└─${h1Text}</div>`;
+      if (isOutlineSlide) {
+        breadcrumbHTML += `<div class="breadcrumb-line level-2"></div>`;
+      } else {
+        breadcrumbHTML += `<div class="breadcrumb-line level-2">└─${h1Text}</div>`;
+      }
     }
 
     // Add main title

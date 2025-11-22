@@ -14,6 +14,7 @@ contributes:
         - resources/footnote-brackets.css
       slide-number: c/t
       filters:
+        - outline.lua
         - metropolis-header.lua
         - custom-block.lua
 
