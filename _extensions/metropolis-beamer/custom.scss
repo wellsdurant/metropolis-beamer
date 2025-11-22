@@ -18,7 +18,7 @@ $presentation-title-slide-text-align: left !default;
 $presentation-slide-text-align: left !default;
 $code-block-font-size: 0.60em !default;
 
-$primary-color: rgb(38, 38, 134) !default;
+$primary-color: #262686 !default;
 $secondary-color: #EB811B !default;
 $body-fg-color: #33474b !default;
 $alert-color: #9c162a !default;
@@ -197,7 +197,7 @@ $authors-block-gap: 4em !default;
 
     .level-2 {
       font-size: 0.85rem;
-      background-color: rgb(25, 25, 90);
+      background-color: #19195A;
       padding: 4px 60px;
       width: 100vw;
       margin-left: -60px;
@@ -293,7 +293,7 @@ $authors-block-gap: 4em !default;
   
   .progress {
 	  background-color: transparent;
-	  color: $secondary-color;
+	  color: #000;
   }
   
   // tables
