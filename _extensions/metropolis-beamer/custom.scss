@@ -230,7 +230,7 @@ $authors-block-gap: 4em !default;
   }
   
   
-  // Balanced horizontal padding for slide content
+  // Minimal left padding for slide content
   .reveal .slides {
     padding: 0 !important;
     margin: 0 !important;
@@ -238,7 +238,7 @@ $authors-block-gap: 4em !default;
   
   .reveal .slides > section,
   .reveal .slides > section > section {
-    padding-left: 30px !important;
+    padding-left: 10px !important;
     padding-right: 40px !important;
   }
   
@@ -246,7 +246,7 @@ $authors-block-gap: 4em !default;
     padding-top: 2em !important;
     margin-top: 1.5em;
     padding-bottom: 3em !important;
-    padding-left: 30px !important;
+    padding-left: 10px !important;
     padding-right: 40px !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -257,7 +257,7 @@ $authors-block-gap: 4em !default;
     padding-top: 4em !important;
     margin-top: 1.5em;
     padding-bottom: 2em !important;
-    padding-left: 30px !important;
+    padding-left: 10px !important;
     padding-right: 40px !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
