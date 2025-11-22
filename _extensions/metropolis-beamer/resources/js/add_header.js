@@ -27,15 +27,15 @@ function header() {
       if (logo_img?.getAttribute('data-src') != null) {
         logo_img.src = logo_img?.getAttribute('data-src') || "";
         logo_img.removeAttribute('data-src');
-      };
-    };
+      }
+    }
 
     // Store presentation title from title slide
     let title = document.querySelector('#title-slide .title, .quarto-title-block .title, h1.title');
     if (title) {
       presentationTitle = title.textContent;
     }
-  };
+  }
 
 
   function make_h2_title() {
@@ -95,7 +95,7 @@ function header() {
 
     header_title_placeholder.innerHTML = breadcrumbHTML;
     header_div.style.visibility = 'visible';
-  };
+  }
   
   
   function linkify_logo(logo, href) {
@@ -105,7 +105,7 @@ function header() {
     link.target = '_blank';
     link.appendChild(logo_cloned);
     logo.replaceWith(link);
-  };
+  }
     
   function get_clean_attrs(elem, attrName) {
     let attrVal = elem.getAttribute(attrName);
@@ -113,31 +113,11 @@ function header() {
      elem.removeAttribute(attrName); 
     }
     return attrVal;
-  };
+  }
   
   
   if (Reveal.isReady()) {
     add_header();
-    
-    const slides = Reveal.getSlides();
-    slides.forEach(slide => {
-      const h1Element = slide.querySelector('h1');
-      const h2Element = slide.querySelector('h2');
-
-      if (h1Element) {
-        const h1Text = h1Element.textContent;
-        slide.setAttribute('data-h1-text', h1Text);
-      } else {
-        slide.setAttribute('data-h1-text', '');
-      }
-
-      if (h2Element) {
-        const h2Text = h2Element.textContent;
-        slide.setAttribute('data-h2-text', h2Text);
-      } else {
-        slide.setAttribute('data-h2-text', '');
-      };
-  });
     
     make_h2_title();
     
@@ -145,14 +125,13 @@ function header() {
     const header_logo = document.querySelector('div.header-logo');
     if (header_logo != null) {
       const header_logo_link = get_clean_attrs(header_logo, 'data-header-logo-link');
-      const footer_logo_link = get_clean_attrs(header_logo, 'data-footer-logo-link');
       
       if (header_logo_link != null) {
         const header_logo_img = document.querySelector('div.header-logo').firstElementChild;
         linkify_logo(header_logo_img, header_logo_link);
-      };
+      }
       
-    };
+    }
     /****************************** END ***************************************/
     
     Reveal.on( 'slidechanged', event => {

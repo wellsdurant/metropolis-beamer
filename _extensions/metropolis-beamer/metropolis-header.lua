@@ -54,7 +54,7 @@ if quarto.doc.is_format('revealjs') then
     end
     if bg_color then
         local bcolor = "background-color: " .. bg_color .. ";"
-        el.attributes['bg-color'] = nil
+        el.attributes['bg'] = nil
         style = style .. ";" .. bcolor 
     end
     
