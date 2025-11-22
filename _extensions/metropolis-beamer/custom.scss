@@ -18,7 +18,7 @@ $presentation-title-slide-text-align: left !default;
 $presentation-slide-text-align: left !default;
 $code-block-font-size: 0.60em !default;
 
-$primary-color: #23373b !default;
+$primary-color: #4169E1 !default;
 $secondary-color: #EB811B !default;
 $body-fg-color: #33474b !default;
 $alert-color: #9c162a !default;
@@ -48,7 +48,17 @@ $authors-block-gap: 4em !default;
     font-family: $presentation-h-font12;
     font-weight: $h12-font-weight;
   }
-  
+
+  h2 {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 0.5em 60px;
+    width: 100vw;
+    margin-left: calc(-1 * (50vw - 50%));
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
   h3, h4, h5, h6 {
     font-family: $presentation-h-font36;
     font-weight: $h36-font-weight;
@@ -166,13 +176,38 @@ $authors-block-gap: 4em !default;
     grid-area: logo;
   }
 
-  div.header-title { 
+  div.header-title {
     grid-area: ht;
     padding-left: 60px;
     padding-top: 15px;
     padding-bottom: 10px;
   }
-  
+
+  .breadcrumb-container {
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1.4;
+
+    .breadcrumb-line {
+      margin: 2px 0;
+      font-weight: 300;
+    }
+
+    .level-1 {
+      font-weight: 400;
+    }
+
+    .level-2 {
+      padding-left: 0.5em;
+      font-size: 0.85rem;
+    }
+
+    .level-3 {
+      padding-left: 0.5em;
+      font-size: 0.8rem;
+    }
+  }
+
   div.reveal-header {
     display: grid;
     grid-template-columns: 3fr 0.35fr;
