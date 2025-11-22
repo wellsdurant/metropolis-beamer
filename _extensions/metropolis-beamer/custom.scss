@@ -289,15 +289,26 @@ $authors-block-gap: 4em !default;
   
   .footer {
     color: #604c38;
+    font-size: 0.5em !important;
   }
 
   .slide-number {
     color: #000;
   }
   
-  .slide aside {
-    bottom: 250px ;
+  .slide aside,
+  .reveal .slides section .footnotes,
+  .reveal .slides section .footnote,
+  .reveal .slides section aside {
+    bottom: 250px;
     color: #604c38;
+    font-size: 0.5em !important;
+  }
+  
+  // Additional footnote styling
+  .reveal .slides section .footnotes ol,
+  .reveal .slides section .footnotes li {
+    font-size: 0.5em !important;
   }
   
   section[data-background-image] {
