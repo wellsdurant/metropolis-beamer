@@ -324,9 +324,11 @@ $authors-block-gap: 4em !default;
   
   // Override Quarto's FontAwesome icon rendering for menu button with black SVG
   .reveal .slide-menu-button .fas::before,
-  .reveal .slide-menu-button .fa-bars::before {
+  .reveal .slide-menu-button .fa-bars::before,
+  .reveal .slide-menu-button a .fas::before,
+  .reveal .slide-menu-button a .fa-bars::before {
     color: #000 !important;
-    filter: none !important;
+    filter: brightness(0) !important;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23000000' d='M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z'/%3E%3C/svg%3E") !important;
   }
 
@@ -348,6 +350,20 @@ $authors-block-gap: 4em !default;
     --r-link-color-dark: darken(#126DDA, 15%);
     --r-link-color-hover: lighten(#126DDA, 20%);
     --r-controls-color: #000;
+  }
+  
+  // Additional overrides for menu button icon color
+  .reveal .slide-menu-button,
+  .reveal .slide-menu-button a,
+  .reveal .slide-menu-button i,
+  .reveal .slide-menu-button .fas,
+  .reveal .slide-menu-button .fa-bars {
+    color: #000 !important;
+  }
+  
+  .reveal .slide-menu-button a:hover,
+  .reveal .slide-menu-button a:focus {
+    color: #000 !important;
   }
 
   // tables
