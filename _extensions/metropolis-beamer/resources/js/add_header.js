@@ -43,7 +43,8 @@ function header() {
     let header_title_placeholder = document.querySelector('div.header-title > .breadcrumb-container');
     let header_div = document.querySelector('div.reveal-header');
 
-    if(currentSlide.id == 'title-slide' || currentSlide.classList.contains('title-slide')) {
+    // Only hide header on the actual presentation title slide, not on H1 level-1 slides
+    if(currentSlide.id == 'title-slide') {
       header_div.style.visibility = 'hidden';
       return;
     }
