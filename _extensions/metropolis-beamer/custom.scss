@@ -140,8 +140,8 @@ $authors-block-gap: 4em !default;
     padding-top: 20px;
     margin-top: 2rem;
     margin-bottom: 3.5rem;
-    border-top: 2px $titleSlide-line $secondary-color;
-  
+    border-top: none;
+
     .quarto-title-author {
       padding-left: 0em !important;
       padding-right: $authors-block-gap !important;
