@@ -139,10 +139,17 @@ $authors-block-gap: 4em !default;
   .quarto-title-author-email {
     font-style: italic;
     text-align: center !important;
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    padding: 0;
+    width: 100% !important;
+    display: block !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+  
+  // Extra specific rule for affiliation
+  .quarto-title-author .quarto-title-affiliation {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
   .quarto-title-author-email a {
