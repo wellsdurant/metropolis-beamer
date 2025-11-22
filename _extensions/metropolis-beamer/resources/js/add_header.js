@@ -75,6 +75,10 @@ function header() {
       }
     }
 
+    // Get h2 from current slide
+    let h2 = currentSlide.querySelector('h2');
+    let h2Text = h2 ? h2.textContent : '';
+
     // Build breadcrumb HTML
     let breadcrumbHTML = '';
     if (presentationTitle) {
@@ -82,6 +86,11 @@ function header() {
     }
     if (h1Text) {
       breadcrumbHTML += `<div class="breadcrumb-line level-2">└─${h1Text}</div>`;
+    }
+
+    // Add h2 title with larger size
+    if (h2Text) {
+      breadcrumbHTML += `<div class="h2-title-line">${h2Text}</div>`;
     }
 
     header_title_placeholder.innerHTML = breadcrumbHTML;
