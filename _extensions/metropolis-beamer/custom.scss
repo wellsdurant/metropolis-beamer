@@ -138,6 +138,14 @@ $authors-block-gap: 4em !default;
   .quarto-title-affiliation,
   .quarto-title-author-email {
     font-style: italic;
+    text-align: center !important;
+    width: 100%;
+    display: block;
+  }
+
+  .quarto-title-author-email a {
+    text-align: center;
+    display: block;
   }
   
   .quarto-title-authors {
@@ -147,11 +155,14 @@ $authors-block-gap: 4em !default;
     border-top: none;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
     .quarto-title-author {
       padding-left: 0em !important;
-      padding-right: $authors-block-gap !important;
-      width: fit-content;
+      padding-right: 0em !important;
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -164,7 +175,10 @@ $authors-block-gap: 4em !default;
   }
 
   // Center date on title slide
-  .date {
+  #title-slide .date,
+  #title-slide p.date,
+  section.title-slide .date,
+  section.title-slide p.date {
     text-align: center !important;
     display: block;
     width: 100%;
