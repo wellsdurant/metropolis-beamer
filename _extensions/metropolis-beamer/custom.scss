@@ -311,6 +311,15 @@ $authors-block-gap: 4em !default;
     font-size: 0.5em !important;
   }
   
+  // Add square brackets around footnote citations
+  .reveal .slides section a.footnote-ref::before {
+    content: "[";
+  }
+  
+  .reveal .slides section a.footnote-ref::after {
+    content: "]";
+  }
+  
   // Add underlines to links
   .reveal a,
   .reveal a:link,

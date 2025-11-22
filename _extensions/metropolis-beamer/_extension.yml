@@ -11,6 +11,7 @@ contributes:
         - resources/fix-menu-icon.css
         - resources/slide-padding.css
         - resources/link-underline.css
+        - resources/footnote-brackets.css
       slide-number: c/t
       filters:
         - metropolis-header.lua
