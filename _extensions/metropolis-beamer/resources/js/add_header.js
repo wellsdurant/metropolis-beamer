@@ -49,16 +49,28 @@ function header() {
     let h2 = currentSlide.querySelector('h2');
     let h3 = currentSlide.querySelector('h3');
 
-    if (h1) currentH1 = h1.textContent;
-    if (h2) currentH2Section = h2.textContent;
-    if (h3) currentH3Section = h3.textContent;
+    // Update stored hierarchy when new headers are found
+    if (h1) {
+      currentH1 = h1.textContent;
+      currentH2Section = '';  // Reset subsections when new h1 found
+      currentH3Section = '';
+    }
+    if (h2 && !h1) {
+      // Only update h2 section if this slide doesn't have h1
+      currentH2Section = h2.textContent;
+      currentH3Section = '';  // Reset h3 when new h2 found
+    }
+    if (h3 && !h1 && !h2) {
+      // Only update h3 if this slide doesn't have h1 or h2
+      currentH3Section = h3.textContent;
+    }
 
     // Build breadcrumb HTML
     let breadcrumbHTML = '';
     if (currentH1) {
       breadcrumbHTML += `<div class="breadcrumb-line level-1">${currentH1}</div>`;
     }
-    if (currentH2Section && currentH2Section !== h2?.textContent) {
+    if (currentH2Section) {
       breadcrumbHTML += `<div class="breadcrumb-line level-2">└─${currentH2Section}</div>`;
     }
     if (currentH3Section) {
