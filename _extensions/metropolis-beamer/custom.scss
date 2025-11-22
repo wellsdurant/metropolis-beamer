@@ -166,18 +166,23 @@ $authors-block-gap: 4em !default;
     margin-bottom: 1.5rem;
   }
   
-  // Title slide title background color
+  // Title slide title background color (only for actual presentation title, not H1 level1 slides)
   #title-slide .title,
-  .reveal .slides section.title-slide .title,
-  div.reveal div.slides section.quarto-title-block .title {
+  .reveal .slides section.quarto-title-block .title {
     background-color: rgb(38, 38, 134);
     color: #fff;
     padding: 10px 60px;
     width: fit-content;
   }
   
-  .slide-background.title-slide {
+  // Only apply dark background to the actual presentation title slide, not H1 level1 slides
+  .slide-background[data-slide-id="title-slide"] {
     background-color: #19195A;
+  }
+
+  // Keep H1 level1 slides with the normal body background
+  .slide-background.level1 {
+    background-color: $body-bg;
   }
   
   div.header-logo { 
